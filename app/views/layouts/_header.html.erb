@@ -1,0 +1,71 @@
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container" style="height: 50px;">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/"><img src="/images/logoFinal.png"></a>
+    </div>
+    <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <% if current_user %>
+            <li class="dropdown">            
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Administracion<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li class="dropdown-header">Pagina principal</li>
+                <li><a href="#">Añadir imagen</a></li>
+                <li><a href="#">Lista de imagenes</a></li>
+                <li class="dropdown-header">Productos</li>
+                <li><a href="#">Añadir producto</a></li>
+                <li><a href="#">Lista de productos</a></li>
+                <li class="dropdown-header">Categorias</li>
+                <li><a href="#">Añadir categoria</a></li>
+                <li><a href="#">Lista de categorias</a></li>
+                <li class="dropdown-header">Marcas</li>
+                <li><a href="#">Añadir marca</a></li>
+                <li><a href="#">Lista de marcas</a></li>
+              </ul>
+            </li>
+            <% else %>
+            <li><a href="#">Productos</a></li>
+            <li><a href="#">Categorias</a></li>
+            <li><a href="#">Marcas</a></li>
+            <% end %>
+          </ul>
+          
+          <p class="navbar-text navbar-right">
+            <% if current_user%>
+              <%= link_to "Cambiar Contraseña", {:controller => :users, :action => 'edit', :id => current_user.id}, :class => "btn btn-xs btn-warning"%>
+              <%= link_to "Cerrar sesión", logout_path, :class => "btn btn-xs btn-danger" %>
+            <% end %>
+          </p>
+
+          <form class="navbar-form navbar-right" role="search">
+            <div class="form-group">
+              <input type="text" class="form-control" placeholder="Buscar...">
+            </div>
+            <button type="submit" class="btn btn-xs btn-info">Buscar</button>
+          </form>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function()
+    {
+        var cambio = false;
+        $('.nav li a').each(function(index) 
+        {
+            if(this.href.trim() == window.location)
+            {
+                $(this).parent().addClass("active");
+                $('.nav a li').addClass("active");
+                cambio = true;
+                      $(this).parent().addClass("active");
+                
+            }
+        });
+        if(!cambio)
+        {
+              $(this).parent().addClass("active");
+        }
+    });
+</script>
+

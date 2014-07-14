@@ -1,0 +1,206 @@
+<!-- Carrusel -->
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="5"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="6"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner">
+                 
+    <div class="item active">
+      <center><img src="/images/1.jpg" height=600 width=1136 alt="1" class="img-rounded"> </center> 
+      <div class="carousel-caption">
+        <h3 class="img-rounded"></h3>
+      </div>
+    </div>
+    <div class="item">
+      <center><img src="/images/3.jpg" height=600 width=1136 alt="2" class="img-rounded"></center>        
+      <div class="carousel-caption">
+        <h3 class="img-rounded"></h3>
+      </div>
+    </div>
+    <div class="item">      
+        <center><img src="/images/2.jpg" height=600 width=1136 alt="3" class="img-rounded"></center>        
+        <div class="carousel-caption">
+          <h3 class="img-rounded"></h3>
+        </div>
+    </div>
+    <div class="item">      
+        <center><img src="/images/4.jpg" height=600 width=1136 alt="3" class="img-rounded"></center>        
+        <div class="carousel-caption">
+          <h3 class="img-rounded"></h3>
+        </div>
+    </div>
+    <div class="item">      
+        <center><img src="/images/6.jpg" height=600 width=1136 alt="3" class="img-rounded"></center>        
+        <div class="carousel-caption">
+          <h3 class="img-rounded"></h3>
+        </div>
+    </div>
+    <div class="item">      
+        <center><img src="/images/7.jpg" height=600 width=1136 alt="3" class="img-rounded"></center>        
+        <div class="carousel-caption">
+          <h3 class="img-rounded"></h3>
+        </div>
+    </div>
+    <div class="item">      
+        <center><img src="/images/8.jpg" height=600 width=1136 alt="3" class="img-rounded"></center>        
+        <div class="carousel-caption">
+          <h3 class="img-rounded"></h3>
+        </div>
+    </div>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+
+<!-- Categorias -->
+<br>
+<br>
+<br>
+
+
+
+
+
+
+<head>
+    <meta charset="UTF-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    
+    <link rel="stylesheet" href="/app/assets/stylesheets/aplication.css">
+    
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+    <div id="divContenedor">
+<center>
+<table>
+  <thead>
+    <tr>
+      <th><center>
+        <div class="divImagen">
+            <img src="/images/laptop4.png" class="img-rounded">    
+            <div class="info">
+                <h3><CENTER> <%= link_to 'Laptops', {:controller => :products, :action => "search_home", :category => "Laptops" }, :class => 'btn btn-mini btn-info'  %></CENTER></h3>       
+            </div>
+          </div></a>
+      </center></th>
+      <th><center>
+        <div class="divImagen">
+            <img src="/images/desktop3.png" class="img-rounded">    
+            <div class="info">
+                <h3><CENTER><%= link_to 'PC De Escritorio', {:controller => :products, :action => "search_home", :category => "Laptops" }, :class => 'btn btn-mini btn-info'  %></CENTER></h3>       
+            </div>
+        </div></a>
+      </center></th>
+      <th><center>
+        <div class="divImagen">
+            <img src="/images/tablet6.png" class="img-rounded">    
+            <div class="info">
+                <h3><CENTER><%= link_to 'Tablets', {:controller => :products, :action => "search_home", :category => "Tablets" }, :class => 'btn btn-mini btn-info'  %></CENTER></h3>       
+            </div>
+        </div></a>
+      </center></th>
+      <th><center>
+        <div class="divImagen">
+            <img src="/images/proyector4.png" class="img-rounded">    
+            <div class="info">
+                <h3><CENTER><%= link_to 'Proyectores', {:controller => :products, :action => "search_home", :category => "Proyectores" }, :class => 'btn btn-mini btn-info'  %></CENTER></h3>       
+            </div>
+        </div></a>
+      </center></th>
+      <th><center>
+        <div class="divImagen">
+            <img src="/images/moviliario.png" class="img-rounded">    
+            <div class="info">
+                <h3><CENTER><%= link_to 'Inmoviiarios', {:controller => :products, :action => "search_home", :category => "Mobiliarios" }, :class => 'btn btn-mini btn-info'  %></CENTER></h3>       
+            </div>
+        </div></a>
+      </center></th>
+      <th><center>
+        <div class="divImagen">
+            <img src="/images/ofertas3.png" class="img-rounded">    
+            <div class="info">
+                <h3><CENTER><%= link_to 'Ofertas Especiales', {:controller => :products, :action => "search_home", :category => "Accesorios" }, :class => 'btn btn-mini btn-info'  %></CENTER></h3>       
+            </div>
+        </div></a>
+      </center></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    
+      <tr>
+      </tr>
+  </tbody>
+</table>
+</center>
+        
+
+    </div>
+      <div class="socialLinks" align="left" id="socialLinks">
+        <br>
+        <br>
+        <br><!--<a href="https://www.facebook.com/informaticacompsrl"><img src="/images/facebook.png"></a>
+      -->
+            <img src="/images/facebook.png" data-toggle="modal" data-target=".bs-example-modal-sm">
+          <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                <div class="fb-like-box" data-href="https://www.facebook.com/informaticacompsrl" data-colorscheme="light" data-show-faces="true" data-header="false" data-stream="true" data-show-border="true"></div>
+              </div>
+            </div>
+          </div>
+          <a href="https://www.twitter.com/Informaticacomp"><img src="/images/twitter.png"></a>
+          <a href="https://www.youtube.com/channel/UCprbI565g2UDoDb8VW03yGQ"><img src="/images/you_tube.png"></a>
+        
+      </div>
+
+</body>
+
+
+<script>
+  
+$(document).ready(function()
+{
+  $('.divImagen').hover(
+    function() {
+      $(this).find('img').stop().animate({ 
+        width:50,
+        marginTop:10,
+        marginLeft:10
+      }, 300);
+    },
+
+    function() {
+      $(this).find('img').stop().animate({
+        width:150,
+        marginTop:10,
+        marginLeft:10
+      },300);
+    }
+  );
+});
+
+</script>         
