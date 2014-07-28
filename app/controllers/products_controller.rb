@@ -8,10 +8,10 @@ class ProductsController < ApplicationController
 		@product = Product.new		
 	end
 
-	def create
-		@product = Product.new
-		@product.save
-	end
+	#def create
+	#	@product = Product.new
+	#	@product.save
+	#end
 
   	def show
    		@product = Product.find(params[:id])
@@ -22,9 +22,7 @@ class ProductsController < ApplicationController
   	end
 
   	def create
-    	
     	@product = Product.new
-    	
     	if @product.save 
       		flash[:success] = "Producto creado exitosamente!"
       		redirect_to @product
@@ -35,7 +33,7 @@ class ProductsController < ApplicationController
   	end
 
   def update
-  	@productname = Productname.find(params[:id])
+  	@productname = Product.find(params[:id])
     if @productname.update_attributes(params[:productname])
 	    flash[:success] = "Producto editado exitosamente!"
       redirect_to @productname
@@ -48,7 +46,7 @@ class ProductsController < ApplicationController
   
   def destroy
     control = true
-    @productname = Productname.find(params[:id])
+    @productname = Product.find(params[:id])
     @productname.productorders.each do |productorder|
       if productorder.productname_id = @productname.id
         control = false
@@ -65,13 +63,13 @@ class ProductsController < ApplicationController
 
   def search
     #@productnames = buscar(params[:name])
-    @productnames = Productname.where("name like ?", "%#{params[:name]}%").paginate(:per_page => 6, :page => params[:page])
+    @productnames = Product.where("name like ?", "%#{params[:name]}%").paginate(:per_page => 6, :page => params[:page])
     render 'index'
   end
 
   def buscar(nombre)
       items = Array.new 
-      aux = Productname.all
+      aux = Product.all
       if nombre != "" && nombre != nil
           aux.each do |item|
           if (item.correspondeAnombre(nombre))
