@@ -22,9 +22,9 @@ class ProductsController < ApplicationController
   	end
 
   	def create
-    	@brand = Brand.find(params[:product][:brand_id])
     	
-    	@product = @brand.product.create(params[:product])
+    	@product = Product.new
+    	
     	if @product.save 
       		flash[:success] = "Producto creado exitosamente!"
       		redirect_to @product
@@ -83,7 +83,7 @@ class ProductsController < ApplicationController
       end
       return items
     end
-end
+
 end
 
 

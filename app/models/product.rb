@@ -1,12 +1,13 @@
 class Product < ActiveRecord::Base
 
 
-	attr_accessible :name, :code, :description, :brand_id
+	attr_accessible :name, :description, :brand, :category, :photo
 	
     
 	has_one :category	
 	belongs_to :brand
     
+
 
     has_many :productorders, :dependent => :destroy
     
@@ -15,10 +16,12 @@ class Product < ActiveRecord::Base
 	#validates :name, format: { with: /\A[a-zA-Z\d\s]+\z/,
     #message: "Solo Letras Permitidas" }
     validates :name, length: {minimum: 5, :message => "Minimo 5 caracteres"}
+    has_attached_file :photo, :styles => { :medium => "300x300>", :thumb => "100x100>" },
+		:storage => :dropbox,
+    	:dropbox_credentials => Rails.root.join("config/dropbox.yml"),
+	 	:default_url => "/images/:style/missing.png"
+  	validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
 
-    validates :code, presence: {:message => "Debe ingresar el codigo del producto"}	
-	validates :code, uniqueness: {case_sensitive: false, :message => "El codigo ya existe"}
-	validates :code, length: {minimum: 5, :message => "El codigo debe tener minimo 5 caracteres"}
 
     validates :description, presence: {:message => "Debe ingresar una descripcion"}   
     validates :description, length: {minimum: 10, :message => "Minimo 5 caracteres"}

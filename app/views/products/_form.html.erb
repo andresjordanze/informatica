@@ -3,10 +3,10 @@
     <p><%= f.label :name, "Nombre del producto" %>
     <%= f.text_field :name, :maxlength => '20'%></p>
     <p><%=f.label :brand, "Marca" %>
-    <%=f.collection_select(:brand_id, Brand.all, :id, :name)%></p>
+    <%=f.collection_select(:brand, Brand.all, :name, :name)%></p>
 
     <p><%=f.label :category, "Categoria" %>
-    <%=f.collection_select(:category_id, Category.all, :id, :name)%></p>
+    <%=f.collection_select(:category, Category.all, :name, :name)%></p>
 
     <p><%= f.label :description , "Descripcion:" %>
     <%= f.text_area :description, :maxlength => '200' %></p><br><br>
