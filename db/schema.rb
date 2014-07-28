@@ -36,6 +36,8 @@ ActiveRecord::Schema.define(version: 20140728220054) do
   create_table "products", force: true do |t|
     t.string   "name"
     t.text     "description"
+    t.integer  "brand_id"
+    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

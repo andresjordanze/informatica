@@ -1,0 +1,18 @@
+<%= form_validated_for(@product) do |f| %>
+  
+    <p><%= f.label :name, "Nombre del producto" %>
+    <%= f.text_field :name, :maxlength => '20'%></p>
+    <p><%=f.label :brand, "Marca" %>
+    <%=f.collection_select(:brand_id, Brand.all, :id, :name)%></p>
+
+    <p><%=f.label :category, "Categoria" %>
+    <%=f.collection_select(:category_id, Category.all, :id, :name)%></p>
+
+    <p><%= f.label :description , "Descripcion:" %>
+    <%= f.text_area :description, :maxlength => '200' %></p><br><br>
+
+    <p><%= f.label :photo, "Foto:" %>
+    <%= f.file_field :photo %></p><br>  
+
+  <p><%= f.submit (@product.new_record? ? 'Registrar Producto' : 'Guardar Cambios'), :class => 'btn btn-mini btn-jordi' %></p>
+<%end%>
