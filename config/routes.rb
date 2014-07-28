@@ -1,4 +1,6 @@
   Informaticacomp::Application.routes.draw do
+  resources :carrousels
+
   resources :kardexes
 
   get 'user/edit' => 'users#edit', :as => :edit_current_user

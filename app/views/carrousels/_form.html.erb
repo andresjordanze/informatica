@@ -1,0 +1,17 @@
+<%= form_for(@carrousel) do |f| %>
+  <% if @carrousel.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@carrousel.errors.count, "error") %> prohibited this carrousel from being saved:</h2>
+
+      <ul>
+      <% @carrousel.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
