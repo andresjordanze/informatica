@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
   def new
   end
-
   def create
     user = User.authenticate(params[:login], params[:password])
     if user
@@ -14,7 +13,6 @@ class SessionsController < ApplicationController
       render :action => 'new'
     end
   end
-
   def destroy
     session[:user_id] = nil
     flash[:danger] = "Usted acaba de cerrar sesion"
