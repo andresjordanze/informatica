@@ -1,9 +1,11 @@
 class Product < ActiveRecord::Base
 
+
 	attr_accessible :name, :code, :description, :brand_id
 	
-    belongs_to :brand
-	
+    
+	has_one :category	
+	belongs_to :brand
     
 
     has_many :productorders, :dependent => :destroy
@@ -30,5 +32,4 @@ class Product < ActiveRecord::Base
     	end
     	false
   	end
-
 end
