@@ -13,16 +13,17 @@ class ProductsController < ApplicationController
 	#	@product.save
 	#end
 
-  	def show
-   		@product = Product.find(params[:id])
-	end
+#  	def show
+ #  		@product = Product.find(params[:id])
+#	end
 
   	def edit
    		@product = Product.find(params[:id])
   	end
 
   	def create
-    	@product = Product.new
+    	@product = Product.new(params[:product])
+
     	if @product.save 
       		flash[:success] = "Producto creado exitosamente!"
       		redirect_to @product
@@ -33,10 +34,10 @@ class ProductsController < ApplicationController
   	end
 
   def update
-  	@productname = Product.find(params[:id])
-    if @productname.update_attributes(params[:productname])
+  	@product = Product.find(params[:id])
+    if @product.update_attributes(params[:product])
 	    flash[:success] = "Producto editado exitosamente!"
-      redirect_to @productname
+      redirect_to @product
       #redirect_to '/productnames'
     else
     	render action: "edit" 
@@ -46,9 +47,9 @@ class ProductsController < ApplicationController
   
   def destroy
     control = true
-    @productname = Product.find(params[:id])
-    @productname.productorders.each do |productorder|
-      if productorder.productname_id = @productname.id
+    @product = Product.find(params[:id])
+    @product.productorders.each do |productorder|
+      if productorder.product_id = @product.id
         control = false
         flash[:danger] = "No puede eliminar el producto porque existen pedidos asociados a este."    
       end

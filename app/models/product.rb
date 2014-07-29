@@ -4,20 +4,20 @@ class Product < ActiveRecord::Base
 	attr_accessible :name, :description, :brand, :category, :photo
 
 	belongs_to :brand
-    
+
+	has_many :brand
+	has_many :category    
     
     validates :name, presence: {:message => "Debe ingresar el nombre del producto"}	
 	validates :name, uniqueness: {case_sensitive: false, :message => "El nombre ya existe"}
-	validates :name, format: { with: /\A[a-zA-Z\d\s]+\z/,
-    message: "Solo Letras Permitidas" }
+	validates :name, format: { with: /\A[a-zA-Z\d\s]+\z/,message: "Solo Letras Permitidas" }
     validates :name, length: {minimum: 5, :message => "Minimo 5 caracteres"}
     
     has_attached_file :photo, :styles => { :medium => "300x300>", :thumb => "100x100>" },
 		:storage => :dropbox,
     	:dropbox_credentials => Rails.root.join("config/dropbox.yml"),
-	 	:default_url => "/images/:style/missing.png"
-  	
-    validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
+		:default_url => "/images/:style/missing.png"
+  	validates_attachment_content_type :photo, :content_type => /\Aimage\/.*\Z/
 
     validates :description, presence: {:message => "Debe ingresar una descripcion"}   
     validates :description, length: {minimum: 10, :message => "Minimo 5 caracteres"}
@@ -32,3 +32,4 @@ class Product < ActiveRecord::Base
     	false
   	end
 end
+

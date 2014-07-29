@@ -14,7 +14,7 @@
     <%= f.text_area :description, :maxlength => '200' %></p><br><br>
 
     <p><%= f.label :photo, "Foto:" %>
-    <%= f.file_field :photo %></p><br>  
+    <%= f.file_field :photo %></p><br> 
 
   <p><%= f.submit (@product.new_record? ? 'Registrar Producto' : 'Guardar Cambios'), :class => 'btn btn-mini btn-jordi' %></p>
 <%end%>
