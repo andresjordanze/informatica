@@ -10,35 +10,34 @@ class ProductsController < ApplicationController
     @brands = Brand.all		
 	end
 
-	#def create
-	#	@product = Product.new
-	#	@product.save
-	#end
+  def show
+      @product = Product.find(params[:id])
+  end
 
-#  	def show
- #  		@product = Product.find(params[:id])
-#	end
+  def edit
+   	@product = Product.find(params[:id])
+    @categories = Category.all
+    @brands = Brand.all   
+  end
 
-  	def edit
-   		@product = Product.find(params[:id])
-  	end
-
-  	def create
-      @categories = Category.all
-      @brands = Brand.all    
-    	@product = Product.new(params[:product])
+  def create
+    @categories = Category.all
+    @brands = Brand.all    
+   	@product = Product.new(params[:product])
 
     	if @product.save 
       		flash[:success] = "Producto creado exitosamente!"
       		redirect_to @product
     	else
-      		flash[:danger] = "Producto no creado, faltan llenar campos"
+      		flash[:danger] = "Producto no creado"
       		render action: "new"
     	end
   	end
 
   def update
   	@product = Product.find(params[:id])
+    @categories = Category.all
+    @brands = Brand.all   
     if @product.update_attributes(params[:product])
 	    flash[:success] = "Producto editado exitosamente!"
       redirect_to @product
