@@ -5,7 +5,9 @@ class ProductsController < ApplicationController
 	end
 
 	def new
-		@product = Product.new		
+		@product = Product.new
+    @categories = Category.all
+    @brands = Brand.all		
 	end
 
 	#def create
@@ -22,6 +24,8 @@ class ProductsController < ApplicationController
   	end
 
   	def create
+      @categories = Category.all
+      @brands = Brand.all    
     	@product = Product.new(params[:product])
 
     	if @product.save 

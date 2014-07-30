@@ -1,17 +1,20 @@
 <% if current_user %>
-<% if current_user.rol == "enc_almacen" || current_user.rol == "gerente" || current_user.rol == "admin" %>
-<div class="panel panel-info">
-  <div class="panel-heading"><h1 align="center"><%= @product.name %></h1></div>
-  <div class="panel-body">
-	<p>
-		<b>Codigo del producto:</b> <%= @product.general_code %><br>
-        <b>Marca:</b> <%= @product.brand %><br>
-        <b>Categoria:</b> <%= @product.category %><br>
-        <b>Detalle:</b> <%= @product.detail %><br>
-        <b>Cantidad:</b> <%= @product.quantity %>
-	</p>
-  </div>
-</div>
+    <% if current_user.rol == "admin" || current_user.rol == "gerente" %>
+<H1><%= @product.name %></H1>
+
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <div class="row featurette">
+        <div class="col-md-7">
+          <!--<h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>-->
+          <h2><%= @product.description %></h2>
+        </div>
+        <div class="col-md-5">
+          <%= image_tag @product.photo.url, size: "500x500" , :class => 'featurette-image img-responsive' %>
+        </div>
+      </div>
 <div align="left">
   <%= button_to 'Volver', products_path, :method => :get, :class => 'btn btn-default  ' %><br> 
 </div>

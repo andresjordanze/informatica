@@ -36,14 +36,17 @@ ActiveRecord::Schema.define(version: 20140728220054) do
   create_table "products", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.string   "brand"
-    t.string   "category"
     t.string   "photo_file_name"
     t.string   "photo_content_type"
     t.integer  "photo_file_size"
+    t.integer  "brand_id"
+    t.integer  "category_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "products", ["brand_id"], name: "index_products_on_brand_id"
+  add_index "products", ["category_id"], name: "index_products_on_category_id"
 
   create_table "users", force: true do |t|
     t.string   "username"
