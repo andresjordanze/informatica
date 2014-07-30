@@ -2,6 +2,8 @@ class ProductsController < ApplicationController
 
 	def index
 		@products = Product.paginate(:per_page => 6, :page => params[:page])
+    @categories = Category.all
+    @brands = Brand.all   
 	end
 
 	def new

@@ -1,26 +1,15 @@
-<% if current_user %>
-    <% if current_user.rol == "admin" || current_user.rol == "gerente" %>
 <H1><%= @product.name %></H1>
+<!-- START THE FEATURETTES -->
+<hr class="featurette-divider">
+  <div class="row featurette">
+    <div class="col-md-7">
+      <h2><%= @product.description %></h2>
+    </div>
+    <div class="col-md-5">
+      <%= image_tag @product.photo.url, size: "500x500" , :class => 'featurette-image img-responsive' %>
+    </div>
+  </div>
 
-      <!-- START THE FEATURETTES -->
-
-      <hr class="featurette-divider">
-
-      <div class="row featurette">
-        <div class="col-md-7">
-          <!--<h2 class="featurette-heading">First featurette heading. <span class="text-muted">It'll blow your mind.</span></h2>-->
-          <h2><%= @product.description %></h2>
-        </div>
-        <div class="col-md-5">
-          <%= image_tag @product.photo.url, size: "500x500" , :class => 'featurette-image img-responsive' %>
-        </div>
-      </div>
 <div align="left">
   <%= button_to 'Volver', products_path, :method => :get, :class => 'btn btn-default  ' %><br> 
 </div>
-
-  <%else%>
-    <%flash[:danger] = "ACCESO RESTRINGIDO"%>
-    <center><img src="/images/candado.png"></center>
-  <%end%>
-<%end%>
