@@ -87,9 +87,5 @@ class ProductsController < ApplicationController
       end
       return items
     end
-
 end
-
-
-
 
