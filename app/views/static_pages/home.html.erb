@@ -10,17 +10,20 @@
     <li data-target="#carousel-example-generic" data-slide-to="5"></li>
     <li data-target="#carousel-example-generic" data-slide-to="6"></li>
   </ol>
-
+  
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
-                 
+  <% @carrousels.each do |carrousel|%>                 
     <div class="item active">
-      <center><img src="/images/1.jpg" height=600 width=1136 alt="1" class="img-rounded"> </center> 
+      <center><%= image_tag carrousel.photo.url %></center> 
       <div class="carousel-caption">
         <h3 class="img-rounded"></h3>
       </div>
     </div>
-    <div class="item">
+  <%end%>
+  </div>
+    
+  <!--  <div class="item">
       <center><img src="/images/3.jpg" height=600 width=1136 alt="2" class="img-rounded"></center>        
       <div class="carousel-caption">
         <h3 class="img-rounded"></h3>
@@ -56,7 +59,7 @@
           <h3 class="img-rounded"></h3>
         </div>
     </div>
-  </div>
+  </div>-->
 
   <!-- Controls -->
   <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
