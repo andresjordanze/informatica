@@ -1,6 +1,6 @@
 <!-- Carrusel -->
 <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-  <!-- Indicators -->
+  <!-- Indicators 
   <ol class="carousel-indicators">
     <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
     <li data-target="#carousel-example-generic" data-slide-to="1"></li>
@@ -9,11 +9,13 @@
     <li data-target="#carousel-example-generic" data-slide-to="4"></li>
     <li data-target="#carousel-example-generic" data-slide-to="5"></li>
     <li data-target="#carousel-example-generic" data-slide-to="6"></li>
-  </ol>
-  
+  </ol>-->
+
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
-  <% @carrousels.each do |carrousel|%>                 
+    <ol class="carousel-indicators">
+  <% @carrousels.each do |carrousel|%>    
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>               
     <div class="item active">
       <center><%= image_tag carrousel.photo.url %></center> 
       <div class="carousel-caption">
@@ -21,6 +23,7 @@
       </div>
     </div>
   <%end%>
+    </ol>
   </div>
     
   <!--  <div class="item">
