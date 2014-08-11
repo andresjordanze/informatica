@@ -12,6 +12,7 @@
   <tbody>
     <% @carrousels.each do |carrousel| %>
       <tr>
+        <td><img src= '<%=carrousel.photo.url %>' width=150 height=150 class="img-rounded"></a> </td>
         <td><%= link_to 'Show', carrousel %></td>
         <td><%= link_to 'Edit', edit_carrousel_path(carrousel) %></td>
         <td><%= link_to 'Destroy', carrousel, method: :delete, data: { confirm: 'Are you sure?' } %></td>

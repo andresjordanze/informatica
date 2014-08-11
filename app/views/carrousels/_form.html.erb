@@ -1,17 +1,6 @@
 <%= form_for(@carrousel) do |f| %>
-  <% if @carrousel.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@carrousel.errors.count, "error") %> prohibited this carrousel from being saved:</h2>
-
-      <ul>
-      <% @carrousel.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+    <p><%= f.label :photo, "Foto:" %>
+    <%= f.file_field :photo %></p><br> 
+    
+    <p><%= f.submit (@carrousel.new_record? ? 'Agregar Imagen' : 'Guardar Cambios'), :class => 'btn btn-lg btn-jordi' %></p>
 <% end %>
