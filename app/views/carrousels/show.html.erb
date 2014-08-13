@@ -1,4 +1,10 @@
-<p id="notice"><%= notice %></p>
-
-<%= link_to 'Edit', edit_carrousel_path(@carrousel) %> |
-<%= link_to 'Back', carrousels_path %>
+<hr class="featurette-divider">
+  <div class="row featurette">
+    <div class="col-md-5">
+      <%= image_tag @carrousel.photo.url, size: "500x500" , :class => 'featurette-image img-responsive' %>
+    </div>
+  </div>
+<br>
+<div align="left">
+  <%= button_to 'Volver', carrousels_path, :method => :get, :class => 'btn btn-default  ' %><br> 
+</div>
