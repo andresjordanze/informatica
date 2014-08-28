@@ -36,8 +36,4 @@
     <%= will_paginate @products, :previous_label => 'Anterior', :next_label => 'Siguiente' %>
 </Center>
 
-<% if current_user == nil %>  
-    <%flash[:danger] = "ACCESO RESTRINGIDO"%>
-    <center><img src="/images/candado.png"></center>
-<%end%>
 

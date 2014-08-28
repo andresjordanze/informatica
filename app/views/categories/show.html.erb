@@ -1,4 +1,4 @@
-<% if current_user %>
+
 	<CENTER>
 		<p>
 		  <b>Nombre:</b>
@@ -13,8 +13,4 @@
 		<div align="left">
 			<%= button_to 'Volver', categories_path, :method => :get, class: "btn btn-default"  %>
 		</div>
-<%else%>
-    <%flash[:danger] = "ACCESO RESTRINGIDO"%>
-    <center><img src="/images/candado.png"></center>
-<%end%>
 

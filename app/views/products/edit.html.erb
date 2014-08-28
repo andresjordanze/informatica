@@ -1,4 +1,4 @@
-<% if current_user %>
+
 	<h1>Editar Producto</h1>
 
 	<%= render 'form' %>
@@ -6,8 +6,3 @@
 	<div align="left">
 		<%= button_to 'Volver', products_path, :method => :get, class: "btn btn-default"  %>
 	</div>
-	
-<%else%>
-    <%flash[:danger] = "ACCESO RESTRINGIDO"%>
-    <center><img src="/images/candado.png"></center>
-<%end%>

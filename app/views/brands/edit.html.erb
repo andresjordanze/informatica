@@ -1,12 +1,6 @@
-<% if current_user %>
-	<h1><%= @brand.name%></h1>
-	<center><%= render 'form' %></center><br>
+<h1><%= @brand.name%></h1>
+<center><%= render 'form' %></center><br>
+<div align="left">
+	<%= button_to 'Volver', brands_path, :method => :get, class: "btn btn-default"  %>
+</div>
 
-	<div align="left">
-		<%= button_to 'Volver', brands_path, :method => :get, class: "btn btn-default"  %>
-	</div>
-
-<%else%>
-	<%flash[:danger] = "ACCESO RESTRINGIDO"%>
-	<center><img src="/images/candado.png"></center>
-<%end%>

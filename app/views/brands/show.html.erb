@@ -1,4 +1,4 @@
-<% if current_user %>
+
 	<p id="notice"><%= notice %></p>
 	<CENTER>
 		<p>
@@ -13,7 +13,3 @@
 	<div align="left">
 		<%= button_to 'Volver', brands_path, :method => :get, class: "btn  btn-default"  %>
 	</div>
-<%else%>
-	<%flash[:danger] = "ACCESO RESTRINGIDO"%>
-	<center><img src="/images/candado.png"></center>
-<%end%>

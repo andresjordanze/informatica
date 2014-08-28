@@ -1,4 +1,4 @@
-<% if current_user %>
+
   <h1>Lista de Marcas</h1>
 
   <div align="right">
@@ -33,7 +33,4 @@
   	</table>
       <%= will_paginate @brands, :previous_label => 'Anterior', :next_label => 'Siguiente' %>
   </CENTER>
-<%else%>
-  <%flash[:danger] = "ACCESO RESTRINGIDO"%>
-  <center><img src="/images/candado.png"></center>
-<%end%>
+
